@@ -169,7 +169,7 @@ module LazopApiClient
                 sign_str += v.to_s()
             end
 
-            return OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), @appSecret, sign_str).upcase
+            return OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), @appSecret, sign_str).upcase!
         end
 
         def get_rest_url(url,api_name)

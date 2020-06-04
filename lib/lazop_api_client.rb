@@ -10,11 +10,7 @@ require 'cgi'
 require 'logger'
 require 'socket'
 
-$dir = '/var/log/lazada';
-if !File.directory?($dir)
-    Dir.mkdir $dir
-end
-$logger = Logger.new($dir + 'lazopsdk.log.' + Time.now.strftime('%Y-%m-%d'))
+$logger = Logger.new(STDERR)
 $logger.level = Logger::WARN
 $logger.formatter = proc { |severity, datetime, progname, msg|
   "#{severity}: #{datetime}: #{msg}\n"

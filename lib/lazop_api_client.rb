@@ -10,15 +10,15 @@ require 'cgi'
 require 'logger'
 require 'socket'
 
-$dir = ENV['HOME'] + '/logs/';
-if !File.directory?($dir)
-    Dir.mkdir $dir
-end
-$logger = Logger.new($dir + 'lazopsdk.log.' + Time.now.strftime('%Y-%m-%d'))
-$logger.level = Logger::WARN
-$logger.formatter = proc { |severity, datetime, progname, msg|
-  "#{severity}: #{datetime}: #{msg}\n"
-}
+# $dir = ENV['HOME'] + '/logs/';
+# if !File.directory?($dir)
+#     Dir.mkdir $dir
+# end
+# $logger = Logger.new($dir + 'lazopsdk.log.' + Time.now.strftime('%Y-%m-%d'))
+# $logger.level = Logger::WARN
+# $logger.formatter = proc { |severity, datetime, progname, msg|
+#   "#{severity}: #{datetime}: #{msg}\n"
+# }
 
 module LazopApiClient
 
